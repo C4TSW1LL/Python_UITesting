@@ -28,6 +28,16 @@ class CommonMethods:
     def change_page(self, page: str):
         if page == "catalog":
             self.driver.get("https://demo.opencart.com/index.php?route=product/category&language=en-gb&path=20_27")
+        if page == "product":
+            self.driver.get(
+                "https://demo.opencart.com/index.php?route=product/product&language=en-gb&path=20_27&product_id=41")
+        if page == "admin":
+            self.driver.get("https://demo.opencart.com/admin/index.php?route=common/login")
+        if page == "register":
+            self.driver.get("https://demo.opencart.com/index.php?route=account/register&language=en-gb")
 
+    def input_value(self, selector: str, value):
+        self.find_element(selector).send_kyes(value)
 
-
+    def click_element(self, selector: str):
+        self.find_element(selector).click()
