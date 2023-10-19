@@ -32,7 +32,7 @@ class ProductPageLocators:
     PRODUCT_PRICE = (By.CSS_SELECTOR, 'ul[class="list-unstyled"] li h2')
     ADD_BTN = (By.XPATH, '//button[@id="button-cart"]')
     PRODUCT_NAME = (By.CSS_SELECTOR, 'div[class="col-sm"] h1')
-    LIKE_PRODUCT_BTN = (By.CSS_SELECTOR, 'div[id="product-product"] div[class="btn-group"] button:nth-child(1)')
+    LIKE_PRODUCT_BTN = (By.CSS_SELECTOR, 'div[id="product-info"] div[class="btn-group"] button:nth-child(1)')
 
 
 class RegisterPageLocators:

@@ -4,8 +4,9 @@ from pages.locators import (CatalogPageLocators,
                             MainPageLocators,
                             ProductPageLocators,
                             AdminAuthLocators,
-                            RegisterPageLocators)
+                            RegisterPageLocators,)
 
+from pages.urls import Urls
 from pages.common_methods import CommonMethods
 
 
@@ -29,12 +30,12 @@ def test_main_page(browser, selector):
                           CatalogPageLocators.LEFT_NAVBAR,
                           CatalogPageLocators.PRODUCT_CARD])
 def test_catalog_page(browser, selector):
-    CommonMethods(browser).change_page("catalog")
+    CommonMethods(browser).change_page(Urls.CATALOG)
     catalog_page = CommonMethods(browser)
     assert catalog_page.check_element(*selector), f'Not found the {selector}'
 
 
-@pytest.mark.catalog_page
+@pytest.mark.product_page
 @pytest.mark.parametrize('selector',
                          [ProductPageLocators.PRODUCT_PHOTO,
                           ProductPageLocators.PRODUCT_PRICE,
@@ -42,7 +43,7 @@ def test_catalog_page(browser, selector):
                           ProductPageLocators.PRODUCT_NAME,
                           ProductPageLocators.LIKE_PRODUCT_BTN])
 def test_product_page(browser, selector):
-    CommonMethods(browser).change_page("product")
+    CommonMethods(browser).change_page(Urls.PRODUCT)
     product_page = CommonMethods(browser)
     assert product_page.check_element(*selector), f'Not found the {selector}'
 
@@ -55,7 +56,7 @@ def test_product_page(browser, selector):
                           AdminAuthLocators.USER_FIELD,
                           AdminAuthLocators.FORGOTTEN_BTN])
 def test_admin_page(browser, selector):
-    CommonMethods(browser).change_page("admin")
+    CommonMethods(browser).change_page(Urls.ADMIN)
     admin_page = CommonMethods(browser)
     assert admin_page.check_element(*selector), f'Not found the {selector}'
 
@@ -67,6 +68,6 @@ def test_admin_page(browser, selector):
                           RegisterPageLocators.PASSWORD_FIELD,
                           RegisterPageLocators.CONTINUE_BTN])
 def test_register_page(browser, selector):
-    CommonMethods(browser).change_page("register")
+    CommonMethods(browser).change_page(Urls.REGISTER)
     register_page = CommonMethods(browser)
     assert register_page.check_element(*selector)
