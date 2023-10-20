@@ -45,3 +45,18 @@ class RegisterPageLocators:
     CONTINUE_BTN = (By.CSS_SELECTOR, 'button[type="submit"]')
     PRIVACY_POLICY_CHECKBOX = (By.CSS_SELECTOR, "input[value='1'][name='agree']")
     CREATED_HEADER = (By.CSS_SELECTOR, "div[id='content'] h1")
+
+
+class AdminPageLocators:
+    CLOSE_ALERT_BTN = (By.CSS_SELECTOR, 'button[class="btn-close"]')
+    CATALOG_BTN = (By.CSS_SELECTOR, 'a[href="#collapse-1"]')
+    PRODUCT_BTN = (By.XPATH, '//ul[@id="collapse-1"]/li[2]/a')
+    ADD_NEW_PRODUCT_BTN = (By.XPATH, "//div[@class='float-end']/a/i[@class='fas fa-plus']")
+
+
+class AddFormLocators:
+    PRODUCT_NAME_FIELD = (By.CSS_SELECTOR, "input[id='input-name-1']")
+    META_TAG_TITLE_FIELD = (By.CSS_SELECTOR, "input[id='input-meta-title-1']")
+    DATA_BTN = (By.CSS_SELECTOR, "a[href='#tab-data']")
+    MODEL_FILED = (By.CSS_SELECTOR, 'input[name="model"]')
+    SAVE_BTN = (By.CSS_SELECTOR, "button[type='submit']")
